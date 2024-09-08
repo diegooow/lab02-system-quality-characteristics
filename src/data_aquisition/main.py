@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 from dotenv import load_dotenv
 import os
-# from utils.mongo import Mongo
+
 # Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
 
@@ -107,7 +107,6 @@ csv_file_path = os.path.join(project_root, 'data', 'repos.csv')
 def save_to_csv(data):
     df = pd.DataFrame(data)
     df.to_csv(csv_file_path, index=False)
-    # Mongo.insert_many(data)
     print("Data saved to src/data/repos.csv")
 
 # Executa a coleta e salva os dados

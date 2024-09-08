@@ -4,6 +4,8 @@ import numpy as np
 import subprocess
 import csv
 import shutil
+import time
+start_time = time.time()
 
 # raiz do projeto
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -67,7 +69,8 @@ def process_repo(repo):
             'cbo:std': 0.0,
             'lcom*:mean': 0.0,
             'lcom*:median': 0.0,
-            'lcom*:std': 0.0
+            'lcom*:std': 0.0,
+            'processed': True
         }
         
         # listas temporárias para calcular métricas
@@ -116,3 +119,4 @@ def process_repo(repo):
         print(f"An unexpected error occurred: {e}")
 
 read_csv()
+print("--- %s seconds ---" % (time.time() - start_time))

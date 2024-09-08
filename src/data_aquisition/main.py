@@ -73,7 +73,7 @@ def collect_data():
     has_next_page = True
     after_cursor = None
 
-    while has_next_page and len(repositories_data) < 10:
+    while has_next_page and len(repositories_data) < 1000:
         result = get_repositories(after_cursor)
         repos = result["data"]["search"]["edges"]
 
@@ -101,12 +101,16 @@ def collect_data():
     return repositories_data
 
 # Salvando os dados em um arquivo CSV
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+csv_file_path = os.path.join(project_root, 'data', 'repos.csv')
+
 def save_to_csv(data):
     df = pd.DataFrame(data)
-    df.to_csv("src/data/repos.csv", index=False)
+    df.to_csv(csv_file_path, index=False)
     # Mongo.insert_many(data)
     print("Data saved to src/data/repos.csv")
 
 # Executa a coleta e salva os dados
 data = collect_data()
 save_to_csv(data)
+

@@ -28,9 +28,9 @@ def read_csv():
         for row in reader:
             url = row.get('url')
             if url:
-                process_repo(url)
+                process_repo(url, row)
 
-def process_repo(repo):
+def process_repo(repo, row):
     ck_jar_path = os.path.join(project_root, 'metrics', 'ck-0.7.1-SNAPSHOT-jar-with-dependencies.jar')
     output_file = os.path.join(project_root, 'data', 'metrics_results.csv')
     write_header = not os.path.isfile(output_file) 
@@ -61,6 +61,11 @@ def process_repo(repo):
         # print(f"JSON Data: {data}")
 
         attributes = {
+            'name': row.get('name'),
+            'stars': row.get('stars'),
+            'age_in_years': row.get('age_in_years'),
+            'releases': row.get('releases'),
+            'primary_language': row.get('primary_language'),
             'repo_url': repo,
             'dit': 0,
             'loc': 0,

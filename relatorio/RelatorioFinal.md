@@ -20,7 +20,7 @@ Este relatório apresenta uma análise das principais características de qualid
 
 ## Metodologia
 
-Para responder às questões de pesquisa, coletamos dados dos 1.000 repositórios Java com maior número de estrelas no GitHub utilizando as APIs REST ou GraphQL do GitHub. Em seguida, utilizamos a ferramenta de análise estática de código CK para calcular as métricas de qualidade.
+Para responder às questões de pesquisa, coletamos dados dos 1.000 repositórios Java com maior número de estrelas no GitHub utilizando as APIs GraphQL do GitHub. Em seguida, utilizamos a ferramenta de análise estática de código CK para calcular as métricas de qualidade.
 
 #### As métricas de processo incluem:
 Popularidade: número de estrelas
@@ -38,7 +38,7 @@ Os dados coletados foram armazenados em um arquivo CSV para análise.
 ## Resultados Obtidos
 
 #### RQ 01. Qual a relação entre a popularidade dos repositórios e as suas características de qualidade?
-Correlação entre stars e quality_score: -0.12 (p-valor: 0.0003)
+Correlação entre número de estrelas e quality_score: -0.12 (p-valor: 0.0003)
 
 A correlação negativa sugere que repositórios mais populares tendem a ter uma pontuação de qualidade menor. Isso pode ser contra-intuitivo, mas pode ser explicado pelo fato de que repositórios mais populares podem atrair contribuições de uma gama mais ampla de desenvolvedores, o que pode levar a uma menor consistência na qualidade do código.
 
@@ -46,7 +46,7 @@ A correlação negativa sugere que repositórios mais populares tendem a ter uma
 
 
 #### RQ 02. Qual a relação entre a maturidade do repositórios e as suas características de qualidade?
-Correlação entre age_in_years e quality_score: 0.07 (p-valor: 0.0232)
+Correlação entre idade(em anos) e quality_score: 0.07 (p-valor: 0.0232)
 
 A correlação positiva sugere que repositórios mais antigos tendem a ter uma pontuação de qualidade ligeiramente maior. Isso pode ser devido ao fato de que repositórios mais antigos tiveram mais tempo para refinar e melhorar seu código.
 
@@ -62,7 +62,7 @@ A correlação positiva sugere que repositórios com mais releases tendem a ter 
 
 
 #### RQ 04. Qual a relação entre o tamanho dos repositórios e as suas características de qualidade?
-Correlação entre loc e quality_score: 0.32 (p-valor: 0.0000)
+Correlação entre LOC(linhas de código) e quality_score: 0.32 (p-valor: 0.0000)
 
 A correlação positiva sugere que repositórios maiores tendem a ter uma pontuação de qualidade maior. Isso pode ser devido ao fato de que repositórios maiores podem ter mais complexidade e, portanto, exigir um nível mais alto de qualidade para manter o código gerenciável.
 

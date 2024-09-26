@@ -1,5 +1,7 @@
 # Laboratório 02 - Estudo das características de qualidade de sistema java
 
+Este repositório apresenta uma análise das principais características de qualidade dos repositórios open-source mais populares escritos em Java no GitHub. As questões de pesquisa abordam a relação entre a popularidade, maturidade, atividade e tamanho dos repositórios e suas características de qualidade interna, medidas através da ferramenta CK.
+
 ## Instruções para execução
 - Entre na pasta principal:
   ```bash
